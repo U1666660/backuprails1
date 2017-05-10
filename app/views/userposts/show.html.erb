@@ -1,0 +1,16 @@
+
+<div class="container">
+ <div class="blog-post">
+
+<h1 class="blog-post-title">User Posts Show</h1>
+<br>
+<p><b>Title:</b> <%= @userpost.title %></p>
+<hr>
+<p><b>Content:</b> <%= @userpost.content %></p>
+<hr>
+
+<p><span class="glyphicon glyphicon-time"></span>  <b>Created:</b> <%= time_ago(@userpost.created_at) %></p>
+
+
+</div>
+</div>

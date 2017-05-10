@@ -30,7 +30,7 @@ end
   resources :messages, only: [:new, :create]
   resources :comments, only: [:create]
   resources :about, only: [:index]
-  resources :userposts, only: [:new, :create]
+  resources :userposts
 
 
 match 'dismiss_all_notifications', to: 'admin/notifications#delete_all', via: :delete
