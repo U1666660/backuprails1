@@ -6,7 +6,7 @@
 <br>
 <p><b>Title:</b> <%= @userpost.title %></p>
 <hr>
-<p><b>Content:</b> <%= @userpost.content %></p>
+<p><b>Content:</b> <%= @userpost.content.html_safe %></p>
 <hr>
 
 <p><span class="glyphicon glyphicon-time"></span>  <b>Created:</b> <%= time_ago(@userpost.created_at) %></p>

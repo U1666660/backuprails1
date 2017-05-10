@@ -6,7 +6,7 @@
 <br>
 <p><b>Title:</b> <%= @post.title %></p>
 <hr>
-<p><b>Content:</b> <%= @post.content %></p>
+<p><b>Content:</b> <%= @post.content.html_safe %></p>
 <hr>
 <p><b>Published</b> <%= status_converter(@post.publish) %></p>
 <hr>

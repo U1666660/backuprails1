@@ -1,9 +1,9 @@
 class Admin::PostsController < Admin::ApplicationController
   def index
     if params[:search].present?
-      @posts = Post.matching_title_or_content(params[:search]).paginate(:page => params[:page], :per_page => 10)
+      @posts = Post.matching_title_or_content(params[:search]).paginate(:page => params[:page], :per_page => 15)
     else
-    @posts = Post.all.order(id: :desc).paginate(:page => params[:page], :per_page => 10)
+    @posts = Post.all.order(id: :desc).paginate(:page => params[:page], :per_page => 15)
   end
 end
 

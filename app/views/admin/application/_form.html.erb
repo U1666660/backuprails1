@@ -20,8 +20,8 @@
    <div class="col-sm-12  form-group">
 <p>
   <%= f.label :content, class: 'col-sm-2 control-label' %>
-   <div class="col-sm-12 form-group">
-    <%= f.text_field :content, class: 'form-control'%>
+   <div class="field">
+    <%= f.trix_editor :content %>
 </p>
 </div>
 </div>
