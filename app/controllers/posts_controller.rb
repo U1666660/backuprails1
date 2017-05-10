@@ -10,13 +10,15 @@ class PostsController < ApplicationController
     else
     @posts = Post.published.paginate(:page => params[:page], :per_page => (Setting.post_per_page) )
   end
+
   end
 
   def show
     @post = Post.find(params[:id])
     @visitor_comment = visitor_comment
-
   end
+
+
 
 private
 
