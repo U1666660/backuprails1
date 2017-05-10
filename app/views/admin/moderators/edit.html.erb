@@ -1,0 +1,58 @@
+<div class="container">
+
+
+
+<h1>Edit Moderator</h1>
+<br>
+
+
+      <% render 'validation_errors', object: @moderator %>
+
+
+
+        <%= form_for [:admin, @moderator] do |f| %>
+
+<div class="row">
+
+          <div class="col-sm-6  form-group ">
+        <%= f.label :fullname, class: 'col-sm-2 control-label'  %>
+                <div class="col-sm-6">
+                    <%= f.text_field :fullname, class: 'form-control' %>
+
+
+                </div>
+
+        </div>
+
+        <div class="col-sm-6  form-group">
+
+        <%= f.label :username, class: 'col-sm-2 control-label' %>
+            <div class="col-sm-6">
+            <%= f.text_field :username, class: 'form-control' %>
+
+      </div>
+</div>
+
+    </div>
+
+<div class="row">
+        <div class="col-sm-6  form-group">
+
+              <%= f.label :password, class: 'col-sm-2 control-label'%>
+                <div class="col-sm-6">
+                  <%= f.password_field :password, class: 'form-control' %>
+
+
+                </div>
+
+              </div>
+</div>
+
+
+  <div class="col-sm-12 form-group text-center">
+        <%= f.submit %>
+  </div>
+
+<% end %>
+
+</div>

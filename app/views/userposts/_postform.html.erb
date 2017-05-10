@@ -1,0 +1,47 @@
+<div class="row">
+
+
+  <%= form_for :userpost, url: userposts_path do |f| %>
+
+<div class="col-sm-12  form-group">
+<p>
+  <%= f.label :title, class: 'col-sm-2 control-label' %>
+     <div class="col-sm-12 ">
+    <%= f.text_field :title, class: 'form-control' %>
+</p>
+</div>
+</div>
+
+
+   <div class="col-sm-12  form-group">
+<p>
+  <%= f.label :content, class: 'col-sm-2 control-label' %>
+   <div class="col-sm-12 form-group">
+    <%= f.text_field :content, class: 'form-control'%>
+</p>
+</div>
+</div>
+
+
+
+<div class="col-sm-12  form-group">
+<p>
+  <%= f.label :publish, class: 'col-sm-2 control-label' %>
+
+    <%= f.check_box :publish %>
+</p>
+
+</div>
+
+
+
+<br>
+
+  <%= f.submit %>
+
+
+</div>
+
+<% end %>
+
+</div>

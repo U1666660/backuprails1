@@ -1,0 +1,49 @@
+<div class="container">
+
+
+<h1>Comments</h1>
+
+
+<p>
+
+<%= render 'search', route: admin_comments_path %>
+
+</p>
+
+
+<p>
+  <%= link_to 'Approved', admin_comments_path(status: true), class: 'btn btn-primary'%>
+  <%= link_to 'Un-Approved', admin_comments_path(status: false), class: 'btn btn-warning'%>
+
+</p>
+
+<% @comments.each do |comment| %>
+<p>
+  <b><%= comment.visitor.fullname %></b> posted message on <b><%= comment.post.title %></b></p>
+  <p><%= comment.message %></p>
+  <p><%= link_to 'Delete', admin_comment_path(comment), style: "color: red", method: :delete, data: {confirm: 'Are you sure?'} %>
+    <p><%=
+    if params[:status] == 'true'
+      link_to 'Un-Approve', admin_comment_path(comment, status: false), style: "color: #FFA500", method: :put
+    else
+      link_to 'Approve', admin_comment_path(comment, status: true), style: "color: #0000b2", method: :put
+    end
+
+    %></p>
+
+
+  </p>
+
+<hr>
+
+<% end %>
+
+
+<div class="text-center">
+
+
+<p><%= will_paginate @comments %></p>
+
+</div>
+
+</div>

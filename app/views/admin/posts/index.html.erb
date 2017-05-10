@@ -1,0 +1,47 @@
+<div class="container">
+
+
+
+<h1>Admin Posts Index</h1>
+
+
+
+
+<button type="button" class="btn btn btn-default"><%= link_to 'New Post', new_admin_post_path %></button>
+
+<p>
+  <%= render 'search', route: admin_posts_path %>
+
+</p>
+
+
+<table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>title</th>
+        <th>publish</th>
+        <th>actions</th>
+      </tr>
+    </thead>
+  <tbody>
+
+<% @posts.each do |post| %>
+    <tr>
+        <td><%= truncate(post.title, length: 60, separate: '' ) %></td>
+          <td><%= status_converter(post.publish, truthy: 'Active', falsey: 'Pending') %></td>
+            <td><%= link_to 'Edit', edit_admin_post_path(post) %></td>
+            <td><%= link_to 'Show', admin_post_path(post) %></td>
+            <td><%= link_to 'Delete', admin_post_path(post), style: 'color: red',method: :delete, data: {confirm: 'Are you sure?'} %></td>
+
+    </tr>
+
+<% end %>
+
+  </tbody>
+
+</table>
+<div class="text-center">
+<p><%= will_paginate @posts %></p>
+</div>
+
+</div>

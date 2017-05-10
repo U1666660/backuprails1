@@ -1,0 +1,36 @@
+<div class="container">
+
+
+<h1>Posts Index</h1>
+<br>
+<%= link_to 'All Posts', posts_path, class:'btn btn-default' %>
+
+<br><br>
+
+  <% @posts.each do |post| %>
+      <p>
+          <%= truncate(post.title, length: 60, separate: '' ) %><br>
+          <span class="glyphicon glyphicon-time"></span>  <%= time_ago post.created_at %>
+      </p>
+
+      <p>
+          <%= truncate(post.content, length: 104, separate: '' ) { link_to 'Read More', post_path(post) }%>
+
+      </p>
+
+
+<% if Setting.tag_visible? %>
+      <p>
+          <% post.tags.each do |tag| %>
+          <%= link_to tag.name, posts_path(tag: tag.name) %>
+          <% end %>
+      </p>
+<% end %>
+      <hr>
+<% end %>
+
+<div class="text-center">
+<p><%= will_paginate @posts %></p>
+</div>
+
+</div>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= favicon_link_tag 'favicon.ico' %>
+    <title>Ruby on Rails Blog</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+    <%= render 'adminpartial/nav'%>
+  <body>
+
+<br>
+<div class="container">
+<% if flash[:notice] %>
+<div class="alert alert-success"><%= flash[:notice] %></div>
+<% end %>
+
+<% if flash[:alert] %>
+<div class="alert alert-danger"><%= flash[:alert] %></div>
+<% end %>
+</div>
+
+
+  <%= yield %>
+
+
+
+
+
+<br>
+
+<div class="bottom">
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p>Copyright Yunqing Peng - All Right Reserved</p>
+</footer>
+</div>
+
+  </body>
+</html>
