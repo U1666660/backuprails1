@@ -4,6 +4,7 @@
 <h1>User Posts Index</h1>
 
 <button type="button" class="btn btn btn-default"><%= link_to 'Create New Post', new_userpost_path %></button>
+<button type="button" class="btn btn btn-default"><%= link_to 'User Login', auth_provider_path %></button>
 
 <p>
   <%= render 'usersearch', route: userposts_path %>
