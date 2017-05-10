@@ -77,4 +77,33 @@
 </table>
 
 
+<h2>User Posts</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>title</th>
+        <th>date</th>
+        <th>actions</th>
+      </tr>
+    </thead>
+  <tbody>
+
+
+  <% @userposts.each do |userpost| %>
+      <tr>
+          <td><%= truncate(userpost.title, length: 60, separate: '' ) %></td>
+            <td><%= status_converter(userpost.publish, truthy: 'Active', falsey: 'Pending') %></td>
+              <td><%= link_to 'Edit', edit_userpost_path(userpost) %></td>
+              <td><%= link_to 'Show', userpost_path(userpost) %></td>
+              <td><%= link_to 'Delete', userpost_path(userpost), style: 'color: red',method: :delete, data: {confirm: 'Are you sure?'} %></td>
+
+      </tr>
+
+  <% end %>
+  </tbody>
+</table>
+
+
+
 </div>

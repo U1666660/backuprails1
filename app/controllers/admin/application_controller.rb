@@ -20,4 +20,8 @@ def to_bool string
 ActiveRecord::Type::Boolean.new.cast(string)
 end
 
+def userpost_params
+   @userposts = Userpost::params.require(:userpost).permit(:id, :title, :content, :publish)
+ end
+
 end

@@ -63,5 +63,4 @@ end
      params.require(:userpost).permit(:id, :title, :content, :publish)
    end
 
-
 end
